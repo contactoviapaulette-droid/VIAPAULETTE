@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/*
+  Vía Paulette — tokens de diseño.
+
+  Los valores vienen del manual de identidad visual y no deben reinterpretarse:
+  esta hoja solo los expone a Tailwind y define la escala tipográfica y el
+  comportamiento base que el manual describe en palabras.
+*/
+
+@theme {
+  /* Colores principales */
+  --color-verde-bosque: #3a4c38;
+  --color-verde-oliva: #5b6d52;
+  --color-verde-salvia: #aab59a;
+  --color-dorado-mate: #cdb277;
+  --color-marfil: #f6f3ea;
+
+  /* Colores secundarios */
+  --color-verde-oscuro: #283426;
+  --color-verde-eucalipto: #7d8d74;
+  --color-beige-natural: #e6e1d4;
+  --color-taupe-suave: #a79f8c;
+  --color-verde-claro: #c8cfbe;
+
+  /* Tipografías del manual */
+  --font-display: var(--font-cormorant), ui-serif, Georgia, serif;
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+
+  /*
+    Escala tipográfica. Los tres tamaños de display cubren el titular, los
+    encabezados de sección y el cierre; nada fuera de la escala.
+  */
+  --text-display-lg: 3rem;
+  --text-display-lg--line-height: 1.05;
+  --text-display-lg--letter-spacing: -0.015em;
+
+  --text-display-md: 3.25rem;
+  --text-display-md--line-height: 1.1;
+  --text-display-md--letter-spacing: -0.01em;
+
+  --text-display-sm: 2.25rem;
+  --text-display-sm--line-height: 1.15;
+
+  /* Antetítulos: versalitas muy espaciadas, como en el manual. */
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.3em;
+}
+
+@media (min-width: 768px) {
+  @theme {
+    --text-display-lg: 4.5rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-marfil);
+  color: var(--color-verde-oscuro);
+  font-family: var(--font-sans);
+}
+
+/*
+  El manual pide una identidad clara y luminosa —«nunca oscura»—, así que la
+  página se compromete con un único mundo visual en lugar de invertirse.
+  Se declara el esquema para que el navegador no aplique su propio ajuste.
+*/
+:root {
+  color-scheme: light;
+}
+
+::selection {
+  background-color: var(--color-verde-salvia);
+  color: var(--color-verde-oscuro);
+}
+
+/* Barra de scroll silenciosa, en los tonos de la marca. */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color-marfil);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-verde-salvia);
+  border-radius: 999px;
+}
+
+/* Quien pide menos movimiento recibe el contenido sin desplazamientos. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
