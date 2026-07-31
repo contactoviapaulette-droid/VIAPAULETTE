@@ -32,9 +32,9 @@ export default function BenefitsView() {
 
         <div className="relative mx-auto aspect-[3/4] w-full max-w-sm md:col-span-5">
           <Fotografia
-            src="/img/about-session.webp"
+            src="/img/about-session-real.jpeg"
             alt="Profesional de Vía Paulette durante una sesión de acompañamiento"
-            forma="canto"
+            forma="circulo"
             sizes="(max-width: 768px) 90vw, 32vw"
           />
         </div>
