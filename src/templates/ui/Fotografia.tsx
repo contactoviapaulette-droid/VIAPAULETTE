@@ -6,7 +6,7 @@ import { EASE_ORGANICO } from "@/templates/motion/Reveal";
 import useReducedMotionSafe from "@/templates/motion/useReducedMotionSafe";
 
 /** Los mismos radios del panel orgánico: ninguna foto se recorta en rectángulo. */
-type Forma = "hoja" | "semilla" | "canto" | "guijarro" | "circulo";
+type Forma = "hoja" | "semilla" | "canto" | "guijarro" | "circulo" | "brote";
 
 type FotografiaProps = {
   src: string;
@@ -25,6 +25,9 @@ const formas: Record<Forma, string> = {
   canto: "36% 64% 52% 48% / 62% 38% 62% 38%",
   guijarro: "50% 50% 44% 56% / 40% 58% 42% 60%",
   circulo: "50%",
+  /** Gota asimétrica clásica: dos esquinas muy abiertas contra dos muy
+      cerradas, para que se lea como mancha orgánica y no como óvalo. */
+  brote: "30% 70% 70% 30% / 30% 30% 70% 70%",
 };
 
 /**

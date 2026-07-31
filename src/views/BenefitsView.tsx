@@ -1,4 +1,5 @@
 import { beneficios } from "@/models";
+import OrnamentoBotanico from "@/templates/graphics/OrnamentoBotanico";
 import Container from "@/templates/layout/Container";
 import Section from "@/templates/layout/Section";
 import BenefitCard from "@/templates/ui/BenefitCard";
@@ -34,9 +35,13 @@ export default function BenefitsView() {
           <Fotografia
             src="/img/about-session-real.jpeg"
             alt="Profesional de Vía Paulette durante una sesión de acompañamiento"
-            forma="circulo"
+            forma="brote"
             sizes="(max-width: 768px) 90vw, 32vw"
           />
+
+          {/* La rama corre por fuera del recorte, a pocos píxeles del borde:
+              acompaña la silueta en vez de posarse encima. */}
+          <OrnamentoBotanico />
         </div>
       </Container>
     </Section>

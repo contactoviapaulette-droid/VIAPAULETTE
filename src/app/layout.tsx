@@ -55,7 +55,14 @@ export default function RootLayout({
       lang="es"
       className={`${cormorant.variable} ${montserrat.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-marfil font-sans text-verde-oscuro">
+      {/* Extensiones como Grammarly inyectan atributos en el <body> antes de
+          que React hidrate; sin esto, cada visita con una instalada arroja un
+          error de hidratación que no viene de la página. Solo silencia los
+          atributos de este nodo, no los desajustes reales del árbol. */}
+      <body
+        suppressHydrationWarning
+        className="flex min-h-full flex-col bg-marfil font-sans text-verde-oscuro"
+      >
         {children}
       </body>
     </html>
