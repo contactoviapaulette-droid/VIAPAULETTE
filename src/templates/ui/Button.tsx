@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 
 type ButtonVariant = "primario" | "secundario" | "contorno";
@@ -43,9 +42,9 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={clases} onClick={onClick}>
+      <a href={href} className={clases} onClick={onClick}>
         {children}
-      </Link>
+      </a>
     );
   }
 

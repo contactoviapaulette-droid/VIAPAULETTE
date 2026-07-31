@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { contacto, navegacion, sitio } from "@/models";
-import BrandMark from "@/templates/graphics/BrandMark";
 import Icono from "@/templates/graphics/Icono";
 import Container from "./Container";
 
@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <BrandMark className="h-9 w-9" color="#F6F3EA" />
+              <Image src="/img/logo-white.png" alt="" width={56} height={56} className="h-14 w-14 rounded-full" />
               <span className="font-display text-xl text-marfil">{sitio.nombre}</span>
             </div>
             <p className="max-w-xs text-pretty font-sans text-sm leading-relaxed text-verde-claro">

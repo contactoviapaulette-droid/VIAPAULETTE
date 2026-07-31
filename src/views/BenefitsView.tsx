@@ -1,8 +1,8 @@
 import { beneficios } from "@/models";
-import OrganicPanel from "@/templates/graphics/OrganicPanel";
 import Container from "@/templates/layout/Container";
 import Section from "@/templates/layout/Section";
 import BenefitCard from "@/templates/ui/BenefitCard";
+import Fotografia from "@/templates/ui/Fotografia";
 import SectionTitle from "@/templates/ui/SectionTitle";
 
 export default function BenefitsView() {
@@ -31,7 +31,12 @@ export default function BenefitsView() {
         </div>
 
         <div className="relative mx-auto aspect-[3/4] w-full max-w-sm md:col-span-5">
-          <OrganicPanel variante="dorado" forma="canto" />
+          <Fotografia
+            src="/img/about-session.webp"
+            alt="Profesional de Vía Paulette durante una sesión de acompañamiento"
+            forma="canto"
+            sizes="(max-width: 768px) 90vw, 32vw"
+          />
         </div>
       </Container>
     </Section>

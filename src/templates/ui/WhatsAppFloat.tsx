@@ -6,7 +6,7 @@ import Icono from "@/templates/graphics/Icono";
 
 /**
  * Aparece recién al dejar atrás el Hero: ahí ya compiten "Agendar cita" y
- * "Conocer más", así que sumar el botón desde el primer segundo saturaría la
+ * "Ver servicios", así que sumar el botón desde el primer segundo saturaría la
  * entrada. El mismo umbral y patrón de scroll que usa el Navbar.
  */
 export default function WhatsAppFloat() {

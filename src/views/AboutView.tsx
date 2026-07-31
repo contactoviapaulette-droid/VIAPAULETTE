@@ -1,8 +1,8 @@
 import { valores } from "@/models";
-import OrganicPanel from "@/templates/graphics/OrganicPanel";
 import Container from "@/templates/layout/Container";
 import Section from "@/templates/layout/Section";
 import Reveal from "@/templates/motion/Reveal";
+import Fotografia from "@/templates/ui/Fotografia";
 import SectionTitle from "@/templates/ui/SectionTitle";
 
 export default function AboutView() {
@@ -10,7 +10,11 @@ export default function AboutView() {
     <Section id="sobre-nosotros">
       <Container className="grid grid-cols-1 items-center gap-16 md:grid-cols-12">
         <div className="relative order-2 mx-auto aspect-square w-full max-w-md md:order-1 md:col-span-5">
-          <OrganicPanel variante="salvia" forma="semilla" />
+          <Fotografia
+            src="/img/about-founder.webp"
+            alt="Fundadora de Vía Paulette en su espacio de acompañamiento"
+            forma="semilla"
+          />
         </div>
 
         <div className="order-1 flex flex-col items-start gap-12 md:order-2 md:col-span-7">

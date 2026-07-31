@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { anclaAgendar, sitio } from "@/models";
-import BrandMark from "@/templates/graphics/BrandMark";
-import OrganicPanel from "@/templates/graphics/OrganicPanel";
 import Container from "@/templates/layout/Container";
 import Button from "@/templates/ui/Button";
+import Fotografia from "@/templates/ui/Fotografia";
 import { EASE_ORGANICO } from "@/templates/motion/Reveal";
 import useReducedMotionSafe from "@/templates/motion/useReducedMotionSafe";
 
@@ -65,28 +65,38 @@ export default function HeroView() {
 
           <motion.div {...aparecer(0.4)} className="flex flex-col gap-4 sm:flex-row">
             <Button href={anclaAgendar}>Agendar cita</Button>
-            <Button href="#sobre-nosotros" variant="contorno">
-              Conocer más
+            <Button href="#servicios" variant="contorno">
+              Ver servicios
             </Button>
           </motion.div>
         </div>
 
         <div className="relative mx-auto aspect-[4/5] w-full max-w-md md:col-span-5">
-          <OrganicPanel variante="bosque" forma="hoja">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <BrandMark className="h-40 w-40 opacity-90" color="#F6F3EA" conAnillo={false} />
-            </div>
-          </OrganicPanel>
+          {/* El consultorio real: la promesa de refugio se ve antes de leerse. */}
+          <Fotografia
+            src="/img/wellness-space.webp"
+            alt="Consultorio de Vía Paulette: sillones, plantas y luz cálida"
+            forma="hoja"
+            prioridad
+            sizes="(max-width: 768px) 90vw, 40vw"
+          />
 
-          {/* Contrapunto que respira lentamente, como una inhalación. */}
-          {!prefiereMenosMovimiento && (
-            <motion.div
-              aria-hidden="true"
-              animate={{ y: [0, -14, 0] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-8 -left-8 h-28 w-28 rounded-full border border-dorado-mate/60 bg-marfil/70 backdrop-blur-sm"
+          {/* El logotipo se posa como un sello sobre la propia foto: el
+              recorte orgánico no llega a las esquinas de la caja, así que el
+              disco va hacia adentro para quedar siempre sobre la imagen. */}
+          <motion.div
+            {...aparecer(0.55)}
+            className="absolute bottom-5 left-5 h-28 w-28 overflow-hidden rounded-full drop-shadow-[0_7px_12px_rgba(40,52,38,0.24)] md:h-32 md:w-32"
+          >
+            <Image
+              src="/img/logo-white.png"
+              alt="Vía Paulette"
+              fill
+              sizes="(max-width: 768px) 7rem, 8rem"
+              priority
+              className="rounded-full object-contain"
             />
-          )}
+          </motion.div>
         </div>
       </Container>
     </section>
